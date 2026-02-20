@@ -1,0 +1,32 @@
+---
+import EventCard from "../../components/cards/event-card.astro"
+
+// Define an event datatype
+type Event = {
+  logo: string;
+  name: string;
+  date: string;
+  description: string;
+  address: string;
+};
+
+// Fetch a list of all events from youthacks api
+const response = await fetch("https://youthacks-portal.vercel.app/testing/event/");
+const data: Event[] = await response.json();
+---
+<div class="flex flex-row">
+			{
+                // Map each event in array to EventCard component by passing attributes through as props
+				data.map(event => (
+					<EventCard
+						src={event.logo}
+						title={event.name}
+						date={event.date}
+						description={event.description}
+						address={event.address}
+						edit_link="https://example.com"
+						view_link="https://example.com" 
+					/>
+				))
+			}
+		</div>
