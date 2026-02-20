@@ -17,9 +17,9 @@ const { event } = Astro.params;
 // Fetch the specific event data
 const response = await fetch("https://youthacks-portal.vercel.app/testing/event/");
 const data: Event[] = await response.json();
-const currentEvent = data.find(e => e.name === event);
+const currentEvent = data.find(e => e.id == event);
 
-if (!currentEvent) {
+if (!currentEvent || currentEvent == null) {
     console.log(currentEvent.name)
   return Astro.redirect("/404");
 }
