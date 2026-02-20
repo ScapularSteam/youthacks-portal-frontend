@@ -25,9 +25,35 @@ if (!currentEvent || currentEvent == null) {
 ---
 
 <Default>
-    <h1>{currentEvent.logo}</h1>
-    <h1>{currentEvent.name}</h1>
-    <h1>{currentEvent.date}</h1>
-    <h1>{currentEvent.description}</h1>
-    <h1>{currentEvent.address}</h1>
+    <div class="hero bg-base-200 min-h-96">
+      <div class="hero-content text-center">
+        <div class="hero-content">
+            <img src={currentEvent.logo} class="max-w-md" alt="logo"/>
+            <h2></h2>
+
+            <div class="flex flex-col text-left">
+              <h2 class="text-4xl font-worksans font-semibold!">{currentEvent.name}</h2>
+            
+              <h2 class="text-xl font-worksans font-normal!">{currentEvent.description}</h2>
+
+              <div class="flex flex-row py-4">
+                <a href="" class="btn btn-dash">Update event details</a>
+              </div>
+            </div>
+
+
+        </div>
+
+        <div class="dock text-center">
+          
+        </div>
+
+
+      </div> 
+
+      
+        
+
+    </div>
+
 </Default>

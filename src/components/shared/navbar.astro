@@ -3,6 +3,7 @@
 
 // Define an event datatype
 type Event = {
+  id: string;
   logo: string;
   name: string;
   date: string;
@@ -15,7 +16,7 @@ const response = await fetch("https://youthacks-portal.vercel.app/testing/event/
 const data: Event[] = await response.json();
 ---
 
-<div class="navbar bg-base-100 shadow-md mb-4 w-full flex-1">
+<div class="navbar bg-base-100 shadow-md w-full flex-1">
     <a class="btn btn-ghost font-worksans font-semibold! text-xl" href="/">
         <img src="https://youthacks.org/_astro/youthacks-logo.Dqc4dc2p.svg" class="h-8 w-auto"alt="logo"/>
     </a>
@@ -53,7 +54,8 @@ const data: Event[] = await response.json();
                     {
                         // Map each event in array to a button
                         data.map(event => (
-                            <a class="btn btn-ghost text-lg">
+                            
+                            <a class="btn btn-ghost text-lg" href={`/events/${event.id}`}>
                                 {event.name}
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
