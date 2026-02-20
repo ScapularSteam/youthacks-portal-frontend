@@ -1,0 +1,14 @@
+---
+import Head from "../../components/shared/head.astro"
+import Default from "../../templates/default.astro"
+
+import EventCardRenderer from "../../components/renderers/event-card-renderer.astro"
+
+---
+
+<html lang="en">
+	<Default>
+		<!-- Dynamically render every event returned from API -->
+		<EventCardRenderer/>
+	</Default>
+</html>

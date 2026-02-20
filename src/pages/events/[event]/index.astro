@@ -1,7 +1,7 @@
 ---
 // todo - render details about a specific event
 
-import Default from "../../templates/default.astro";
+import Default from "../../../templates/default.astro";
 
 type Event = {
   id: string;
@@ -20,7 +20,6 @@ const data: Event[] = await response.json();
 const currentEvent = data.find(e => e.id == event);
 
 if (!currentEvent || currentEvent == null) {
-    console.log(currentEvent.name)
   return Astro.redirect("/404");
 }
 ---

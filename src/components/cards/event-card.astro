@@ -1,5 +1,6 @@
 ---
-const { src, title, date, description, address, edit_link, view_link } = Astro.props;
+const { id, src, title, date, description, address, edit_link, view_link } = Astro.props;
+const link = "/events/" + id
 // https://placehold.co/600x400
 ---
 
@@ -15,7 +16,7 @@ const { src, title, date, description, address, edit_link, view_link } = Astro.p
             <p class="font-worksans italic">Address: {address}</p>
         </div>
         <div class="card-actions justify-start">
-            <a class="btn btn-primary font-worksans" href={edit_link}>Edit event</a>
+            <a class="btn btn-primary font-worksans" href={link}>Edit event</a>
             <a class="btn btn-secondary font-worksans" href={view_link}>View website</a>
         </div>
     </div>

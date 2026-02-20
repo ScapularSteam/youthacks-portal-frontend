@@ -3,6 +3,7 @@ import EventCard from "../../components/cards/event-card.astro"
 
 // Define an event datatype
 type Event = {
+  id: string;
   logo: string;
   name: string;
   date: string;
@@ -19,6 +20,7 @@ const data: Event[] = await response.json();
                 // Map each event in array to EventCard component by passing attributes through as props
 				data.map(event => (
 					<EventCard
+						id = {event.id}
 						src={event.logo}
 						title={event.name}
 						date={event.date}
