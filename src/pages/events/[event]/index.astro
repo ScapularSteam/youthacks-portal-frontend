@@ -2,6 +2,7 @@
 // todo - render details about a specific event
 
 import Default from "../../../templates/default.astro";
+import EventNavbar from "../../../components/reusable/event-navbar.astro";
 
 type Event = {
   id: string;
@@ -41,19 +42,10 @@ if (!currentEvent || currentEvent == null) {
               </div>
             </div>
 
-
         </div>
-
-        <div class="dock text-center">
-          
-        </div>
-
-
       </div> 
-
-      
-        
-
     </div>
+
+    <EventNavbar event_id={currentEvent.id}/>
 
 </Default>
