@@ -1,4 +1,6 @@
 ---
+
+
 // Define an event datatype
 type Event = {
   logo: string;
@@ -14,7 +16,7 @@ const data: Event[] = await response.json();
 ---
 
 <div class="navbar bg-base-100 shadow-md mb-4 w-full flex-1">
-    <a class="btn btn-ghost font-worksans font-semibold! text-xl">
+    <a class="btn btn-ghost font-worksans font-semibold! text-xl" href="/">
         <img src="https://youthacks.org/_astro/youthacks-logo.Dqc4dc2p.svg" class="h-8 w-auto"alt="logo"/>
     </a>
     <h1 class="text-xl font-worksans font-semibold!">Portal</h1>
@@ -37,7 +39,7 @@ const data: Event[] = await response.json();
                     </div>
                 </div>
                 <ul tabindex="-1" class="menu dropdown-content bg-base-200 rounded-box z-1 w-72 p-2 shadow-md">
-                    <a class="btn btn-ghost text-lg">
+                    <a class="btn btn-ghost text-lg" href="/events">
                         View all
 
                         <div>
