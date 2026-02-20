@@ -1,0 +1,34 @@
+---
+// todo - render details about a specific event
+
+import Default from "../../templates/default.astro";
+
+type Event = {
+  id: string;
+  logo: string;
+  name: string;
+  date: string;
+  description: string;
+  address: string;
+};
+
+const { event } = Astro.params;
+
+// Fetch the specific event data
+const response = await fetch("https://youthacks-portal.vercel.app/testing/event/");
+const data: Event[] = await response.json();
+const currentEvent = data.find(e => e.name === event);
+
+if (!currentEvent) {
+    console.log(currentEvent.name)
+  return Astro.redirect("/404");
+}
+---
+
+<Default>
+    <h1>{currentEvent.logo}</h1>
+    <h1>{currentEvent.name}</h1>
+    <h1>{currentEvent.date}</h1>
+    <h1>{currentEvent.description}</h1>
+    <h1>{currentEvent.address}</h1>
+</Default>
