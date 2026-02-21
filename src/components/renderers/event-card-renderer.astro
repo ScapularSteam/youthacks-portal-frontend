@@ -15,7 +15,7 @@ type Event = {
 const response = await fetch("https://youthacks-portal.vercel.app/testing/event/");
 const data: Event[] = await response.json();
 ---
-<div class="flex flex-row">
+<div class="flex flex-row flex-wrap gap-4">
 			{
                 // Map each event in array to EventCard component by passing attributes through as props
 				data.map(event => (

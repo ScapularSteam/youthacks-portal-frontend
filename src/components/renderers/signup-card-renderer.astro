@@ -1,9 +1,5 @@
 ---
-// todo - render all signups for a given event
-import Default from "../../../templates/default.astro";
-import SignupCard from "../../../components/cards/signup-card.astro"
-import SignupCardRenderer from "../../../components/renderers/signup-card-renderer.astro";
-import EventsHero from "../../../components/shared/events/events-hero.astro";
+import SignupCard from "../cards/signup-card.astro";
 
 type Event = {
   id: string;
@@ -52,11 +48,20 @@ if (!currentEvent || currentEvent == null) {
   return Astro.redirect("/404");
 }
 ---
-<Default>
-    <EventsHero/>
-    <SignupCardRenderer/>
-    
-
-    
-    
-</Default>
+<div class="flex flex-row flex-wrap gap-4">
+    {
+        // Map each event in array to EventCard component by passing attributes through as props
+        signup_data.map(signup => (
+            <SignupCard
+                status="Not implemented"
+                prefered_name={signup.attendee.prefered_name}
+                first_name={signup.attendee.first_name}
+                last_name={signup.attendee.last_name}
+                email={signup.attendee.email}
+                medical_info={signup.attendee.medical_info}
+                dietary_requirements={signup.attendee.dietary_requirements}
+                id={signup.attendee.id}
+            />
+        ))
+    }
+</div>
