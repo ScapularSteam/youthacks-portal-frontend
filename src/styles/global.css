@@ -1,12 +1,12 @@
 /* Ignore any warnings from this file, site compiles normally */
 
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* stylelint-disable-next-line at-rule-no-unknown */
 @plugin "daisyui";
 
 /* Import google fonts |*/
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Custom tailwind theming */
 @theme {

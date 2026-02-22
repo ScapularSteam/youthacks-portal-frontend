@@ -2,7 +2,9 @@
 const { status, prefered_name, first_name, last_name, email, medical_info, dietary_requirements, id } = Astro.props;
 const attendee_link = "/attendees/" + id;
 ---
-<div class="card bg base-100 w-96 shadow-md">
+
+
+<div class="card bg-base-200 w-96 shadow-sm hover:shadow-md">
     <div class="card-body">
         <h2 class="card-title">{prefered_name}</h2>
 

@@ -25,7 +25,10 @@ if (!currentEvent || currentEvent == null) {
     <div class="hero bg-base-200 min-h-96">
       <div class="hero-content text-center">
         <div class="hero-content">
-            <img src={currentEvent.logo} class="max-w-md" alt="logo"/>
+            <div class="hover-3d">
+              <img src={currentEvent.logo} class="max-w-md" alt="logo"/>
+            </div>
+            
             <h2></h2>
 
             <div class="flex flex-col text-left">
@@ -34,7 +37,7 @@ if (!currentEvent || currentEvent == null) {
               <h2 class="text-xl font-worksans font-normal!">{currentEvent.description}</h2>
 
               <div class="flex flex-row py-4">
-                <a href="" class="btn btn-dash">Update event details</a>
+                <button class="btn btn-dash" onclick="events_edit_modal.showModal()">Update event details</a>
               </div>
             </div>
 
@@ -43,4 +46,45 @@ if (!currentEvent || currentEvent == null) {
     </div>
 
     <EventNavbar event_id={currentEvent.id}/>
+    <dialog id="events_edit_modal" class="modal">
+      <div class="modal-box">
+        <h1>Edit Event</h1>
+
+
+        <form method="POST" action="https://youthacks-portal.vercel.app/testing/event/">
+          <fieldset class="fieldset">
+
+            <input type="hidden" id="id" name="id" value={currentEvent.id} required>
+
+            <legend class="fieldset-legend">Event name</legend>
+            <input type="text" id="name" class="input" placeholder="Cool as Hack" value={currentEvent.name}>
+            <p class="label">Changing this won't affect the portal</p>
+
+            <legend class="fieldset-legend">Description</legend>
+            <input type="text" id="description" class="input" placeholder="A super cool event" value={currentEvent.description}>
+            <p class="label">1-3 sentence description of your event!</p>
+
+            <legend class="fieldset-legend">Logo</legend>
+            <input type="text" id="logo" class="input" placeholder="An awesome logo" value={currentEvent.logo}>
+            <p class="label">Upload your logo to a CDN, then paste the link here</p>
+
+            <legend class="fieldset-legend">Address</legend>
+            <input type="text" id="address" class="input" placeholder="An amazing venue" value={currentEvent.address}>
+            <p class="label">Paste the address of your event from Google Maps here</p>
+
+            <legend class="fieldset-legend">Date of event</legend>
+            <input type="text" id="date" class="input" placeholder="29/02/2026" value={currentEvent.date}>
+            <p class="label">YY-MM-DD format please!</p>
+  
+            <input type="submit" id="submit" class="btn btn-primary my-4" value="Edit event">
+            <p class="label">Tip: Click outside the box to cancel!</p>
+          </fieldset>
+        </form>
+
+
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
 </div>
