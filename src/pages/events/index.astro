@@ -9,6 +9,66 @@ import EventCardRenderer from "../../components/renderers/event-card-renderer.as
 <html lang="en">
 	<Default>
 		<!-- Dynamically render every event returned from API -->
+
+		
+		 
+
+		 <div class="mt-12 ml-12">
+			<div class="mb-4">
+				<h1 class="text-3xl font-worksans font-semibold!">All Events</h1>
+				<p>Can't find your event? Contact hello@youthacks.org for help!</p>
+			</div>
+			
+			<btn class="btn btn-primary"  onclick="events_create_modal.showModal()">
+				<p>New event</p>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+				</svg>
+		 	</btn>
+		 </div>
 		<EventCardRenderer/>
+
+
+		<dialog id="events_create_modal" class="modal">
+		<div class="modal-box">
+			<h1>Create Event</h1>
+
+
+			<form method="POST" action="https://youthacks-portal.vercel.app/testing/event/">
+			<fieldset class="fieldset">
+
+				<input type="hidden" id="id" name="id" value="-1" required>
+
+				<legend class="fieldset-legend">Event name</legend>
+				<input type="text" id="name" name="name" class="input" placeholder="Cool as Hack">
+				<p class="label">Changing this won't affect the portal</p>
+
+				<legend class="fieldset-legend">Description</legend>
+				<input type="text" id="description" name="description" class="input" placeholder="A super cool event">
+				<p class="label">1-3 sentence description of your event!</p>
+
+				<legend class="fieldset-legend">Logo</legend>
+				<input type="text" id="logo" name="logo" class="input" placeholder="An awesome logo">
+				<p class="label">Upload your logo to a CDN, then paste the link here</p>
+
+				<legend class="fieldset-legend">Address</legend>
+				<input type="text" id="address" name="address" class="input" placeholder="An amazing venue" >
+				<p class="label">Paste the address of your event from Google Maps here</p>
+
+				<legend class="fieldset-legend">Date of event</legend>
+				<input type="text" id="date" name="date" class="input" placeholder="29/02/2026">
+				<p class="label">YY-MM-DD format please!</p>
+	
+				<input type="submit" id="submit" class="btn btn-primary my-4" value="Create event">
+				<p class="label">Tip: Click outside the box to cancel!</p>
+			</fieldset>
+			</form>
+
+			</div>
+			<form method="dialog" class="modal-backdrop">
+				<button>close</button>
+			</form>
+
+		</dialog>
 	</Default>
 </html>

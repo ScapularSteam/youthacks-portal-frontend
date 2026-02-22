@@ -34,6 +34,14 @@ if (!currentEvent || currentEvent == null) {
 <Default>
     <EventsHero/>
 
+    <div class="mt-12 ml-12">
+			<div class="mb-4">
+				<h1 class="text-3xl font-worksans font-semibold!">Address</h1>
+				<p>{currentEvent.address}</p>
+			</div>
+			
+		 </div>
+
     <div class="m-12">
         <iframe width="500" height="350" style="border:0" loading="lazy" allowfullscreen
             src={`https://www.google.com/maps/embed/v1/search?q=${address_formatted}&key=AIzaSyCovJJSkYYopeJUMAhi4-9b8XfFkTxsYyg`}

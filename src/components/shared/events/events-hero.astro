@@ -57,23 +57,23 @@ if (!currentEvent || currentEvent == null) {
             <input type="hidden" id="id" name="id" value={currentEvent.id} required>
 
             <legend class="fieldset-legend">Event name</legend>
-            <input type="text" id="name" class="input" placeholder="Cool as Hack" value={currentEvent.name}>
+            <input type="text" id="name" name="name" class="input" placeholder="Cool as Hack" value={currentEvent.name}>
             <p class="label">Changing this won't affect the portal</p>
 
             <legend class="fieldset-legend">Description</legend>
-            <input type="text" id="description" class="input" placeholder="A super cool event" value={currentEvent.description}>
+            <input type="text" id="description" name="description" class="input" placeholder="A super cool event" value={currentEvent.description}>
             <p class="label">1-3 sentence description of your event!</p>
 
             <legend class="fieldset-legend">Logo</legend>
-            <input type="text" id="logo" class="input" placeholder="An awesome logo" value={currentEvent.logo}>
+            <input type="text" id="logo" name="logo" class="input" placeholder="An awesome logo" value={currentEvent.logo}>
             <p class="label">Upload your logo to a CDN, then paste the link here</p>
 
             <legend class="fieldset-legend">Address</legend>
-            <input type="text" id="address" class="input" placeholder="An amazing venue" value={currentEvent.address}>
+            <input type="text" id="address" name="address" class="input" placeholder="An amazing venue" value={currentEvent.address}>
             <p class="label">Paste the address of your event from Google Maps here</p>
 
             <legend class="fieldset-legend">Date of event</legend>
-            <input type="text" id="date" class="input" placeholder="29/02/2026" value={currentEvent.date}>
+            <input type="text" id="date" name="date" class="input" placeholder="29/02/2026" value={currentEvent.date}>
             <p class="label">YY-MM-DD format please!</p>
   
             <input type="submit" id="submit" class="btn btn-primary my-4" value="Edit event">
